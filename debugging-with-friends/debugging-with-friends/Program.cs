@@ -10,6 +10,7 @@
             string userAngleAsString = "";
             string userName = "";
             string newName = "";
+            int userNumber1AsInt = 0;
             int userNumber2AsInt = 0;
             int userAngleAsInt = 0;
             int percentage;
@@ -25,9 +26,10 @@
             Console.WriteLine();
             Console.Write("First, enter a number between 1 and 100: ");
             userNumber1AsString = Console.ReadLine();
+            userNumber1AsInt = int.Parse(userNumber1AsString);
             Console.Write("Now, enter a number between 1 and 9: ");
             userNumber2AsString = Console.ReadLine();
-            userNumber2AsInt = double.Parse(userNumber2AsString);
+            userNumber2AsInt = int.Parse(userNumber2AsString);
             percentage = userNumber2AsInt / 10;
 
             // Perform necessary math on it!
@@ -45,7 +47,7 @@
             // Find the sin of the user's angle
             Console.WriteLine("Great! Now let's determine some trigonometry.");
             Console.WriteLine("Give me a whole angle in degrees, and I'll tell you the sine!");
-            string userAngleAsString = Console.ReadLine();
+            userAngleAsString = Console.ReadLine();
             userAngleAsInt = int.Parse(userAngleAsString);
 
             Console.WriteLine(
@@ -56,7 +58,7 @@
             Console.WriteLine(
                 $"The sine of " +
                 $"{userAngleAsInt} radians is " +                   // 1.05 radians
-                $"{Math.Round(sineOfAngle, 2)}");                   // 0.866
+                $"{Math.Sin(userAngleAsInt)}");                     // 0.866
 
 
             // Blank line for readable formatting
