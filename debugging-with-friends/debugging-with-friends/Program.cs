@@ -1,4 +1,4 @@
-﻿namespace debugging_with_friends
+﻿namespace GDAPS_DebuggingStarter
 {
     internal class Program
     {
