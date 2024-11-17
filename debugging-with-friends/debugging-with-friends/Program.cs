@@ -90,7 +90,7 @@
             Console.WriteLine();
 
             // Goodbye!
-            Console.WriteLine("Thanks for playing my game!  Have a great day {newName} !");
+            Console.WriteLine("Thanks for playing my game!  Have a great day " + userName + " !");
         }
     }
 }
