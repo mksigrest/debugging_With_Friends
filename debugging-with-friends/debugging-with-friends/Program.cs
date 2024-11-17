@@ -10,10 +10,15 @@
             string userAngleAsString = "";
             string userName = "";
             string newName = "";
-            int userNumber1AsInt = 0;
-            int userNumber2AsInt = 0;
+
+            double userNumber1AsInt = 0;
+            double userNumber2AsInt = 0;
+
             int userAngleAsInt = 0;
-            int percentage;
+            double userAngleAsDouble = 0;
+
+            double percentage;
+            double percentageVal;
 
 
             // Ask the user for:
@@ -26,16 +31,17 @@
             Console.WriteLine();
             Console.Write("First, enter a number between 1 and 100: ");
             userNumber1AsString = Console.ReadLine();
-            userNumber1AsInt = int.Parse(userNumber1AsString);
+            userNumber1AsInt = double.Parse(userNumber1AsString);
             Console.Write("Now, enter a number between 1 and 9: ");
             userNumber2AsString = Console.ReadLine();
-            userNumber2AsInt = int.Parse(userNumber2AsString);
+            userNumber2AsInt = double.Parse(userNumber2AsString);
             percentage = userNumber2AsInt / 10;
+            percentageVal = percentage * 100;
 
             // Perform necessary math on it!
             double userNumberAsPercentage = userNumber1AsInt * percentage;
             Console.WriteLine(
-                $"{percentage} of " +                  // Prints out of 100% (20%)
+                $"{percentageVal}% of " +                  // Prints out of 100% (20%)
                 $"{userNumber1AsString} is " +         // User's chosen starting value (50)
                 $"{userNumberAsPercentage}");          // Product (10)
 
@@ -49,16 +55,19 @@
             Console.WriteLine("Give me a whole angle in degrees, and I'll tell you the sine!");
             userAngleAsString = Console.ReadLine();
             userAngleAsInt = int.Parse(userAngleAsString);
+            userAngleAsDouble = userAngleAsInt * Math.PI / 180;
 
             Console.WriteLine(
                 "Converting to radians... " +                       //
                 $"{userAngleAsInt} degrees is " +                   // 60 degrees
-                $"{userAngleAsInt * Math.PI / 180} radians.");      // 1.0471975511965976 radians
+                $"{userAngleAsDouble} radians.");      // 1.0471975511965976 radians
+
+            userAngleAsDouble = Math.Round(userAngleAsDouble, 2);
 
             Console.WriteLine(
                 $"The sine of " +
-                $"{userAngleAsInt} radians is " +                   // 1.05 radians
-                $"{Math.Sin(userAngleAsInt)}");                     // 0.866
+                $"{userAngleAsDouble} radians is " +                   // 1.05 radians
+                $"{Math.Sin(userAngleAsDouble)}");                     // 0.866
 
 
             // Blank line for readable formatting
