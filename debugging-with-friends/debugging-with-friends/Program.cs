@@ -52,7 +52,7 @@
             // Tell the user the equivalent number of radians
             // Find the sin of the user's angle
             Console.WriteLine("Great! Now let's determine some trigonometry.");
-            Console.WriteLine("Give me a whole angle in degrees, and I'll tell you the sine!");
+            Console.Write("Give me a whole angle in degrees, and I'll tell you the sine! ");
             userAngleAsString = Console.ReadLine();
             userAngleAsInt = int.Parse(userAngleAsString);
             userAngleAsDouble = userAngleAsInt * Math.PI / 180;
@@ -67,7 +67,7 @@
             Console.WriteLine(
                 $"The sine of " +
                 $"{userAngleAsDouble} radians is " +                   // 1.05 radians
-                $"{Math.Sin(userAngleAsDouble)}");                     // 0.866
+                $"{Math.Round(Math.Sin(userAngleAsDouble), 3)}");                     // 0.866
 
 
             // Blank line for readable formatting
@@ -77,8 +77,15 @@
             // Change their name by placing the first character on the end
             //   like so:  Charlotte becomes harlotteC
             Console.WriteLine("Lastly, tell me your name!");
-            userName = Console.ReadLine().Trim();                           // Emily
-            newName = userName.Substring(userName.Length) + userName[1];    // milyE
+            userName = Console.ReadLine().Trim();    // Emily
+
+            for (int i = 0; i < userName.Length - 1; i++)
+            {
+                newName += userName.Substring(userName.Length) + userName[i + 1];
+            }
+            newName += userName.Substring(userName.Length) + userName[0];
+
+            //newName = userName.Substring(userName.Length) + userName[1];    // milyE
             Console.WriteLine("I will rename you " + newName + "!");
             Console.WriteLine();
 
